@@ -4,8 +4,8 @@
 int actual_size(int a)
 {
     if (a < 0)
-        return (-a);
-    return (a);
+        a *= -1;
+    return (a + 1);
 }
 
 int *ft_range(int start, int end)
@@ -15,7 +15,7 @@ int *ft_range(int start, int end)
     int *d;
     int i;
 
-    size = actual_size(end - start) + 1;
+    size = actual_size(end - start);
     d = (array = malloc(size * sizeof(int)));
     array = malloc(size * sizeof(int));
     //if (!d)
@@ -50,7 +50,7 @@ int        main(void)
     int i = 0;
     int start = -3;
     int end = -12 ;
-    int size = actual_size(end - start) + 1;
+    int size = actual_size(end - start);
     
     tab = ft_range(start, end);
     while(i < size)
